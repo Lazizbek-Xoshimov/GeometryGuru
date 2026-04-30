@@ -1,7 +1,7 @@
 ![geoLogo](assets/geoLogo.jpg)
 
 # GeometryGuru
-**Bu loyiha console app da yaratildi va hisoblash amallarini bajaradi.**
+**Bu loyiha arifmetic amallarni bajaradi**
 
 ## Xususiyatlari
 *Bu loyiha quyidagi amallarni bajaradi:*
@@ -9,6 +9,7 @@
 - *Bo'lish (/)*
 - *Ayirish (-)*
 - *Qo'shish (+)*
+- *Qoldiqli bo'lish (%)*
 
 ## Ishga tushirish
 1. .NET SDK yuklab oling:   
@@ -21,3 +22,6 @@ git clone https://github.com/Lazizbek-Xoshimov/GeometryGuru.git
 ```bash
 dotnet run
 ```
+
+### Kelajakdagi yangiliklar
+*Console ni foydalanuvchi real-time da input yoki output qilgan o'zgarishlarini ko'rib turishi kerak ...*
