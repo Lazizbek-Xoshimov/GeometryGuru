@@ -1,4 +1,6 @@
-﻿Console.WriteLine("Kerakli hisoblash ketma-ketligini kiriting: (a + b =)");
+﻿using System.Drawing;
+
+Console.WriteLine("Kerakli hisoblash ketma-ketligini kiriting: (a + b =)");
 string calculate = Console.ReadLine();
 
 string[] operators = calculate.Trim().Split();
@@ -8,7 +10,6 @@ int a = Convert.ToInt32(operators[0]);
 int b = Convert.ToInt32(operators[2]);
 
 Console.Clear();
-
 switch (departmentCharacter)
 {
     case '+':
@@ -25,15 +26,25 @@ switch (departmentCharacter)
             if(b != 0)
                 Console.WriteLine(a + " / " + b + " = " + (a / b));
             else
-                Console.WriteLine("Ikkinchi son 0 bo'lishi mumkin emas!");
+                {
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Ikkinchi son 0 bo'lishi mumkin emas!");
+                    Console.ResetColor();
+                }
             break;
         }
     case '%':
-        if(b != 0)
+        {
+            if(b != 0)
                 Console.WriteLine(a + " % " + b + " = " + (a % b));
             else
-                Console.WriteLine("Ikkinchi son 0 bo'lishi mumkin emas!");
-            break;
+                {
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Ikkinchi son 0 bo'lishi mumkin emas!");
+                    Console.ResetColor();
+                }
+            break;   
+        }
     default:
         Console.WriteLine("Boshqa belgi kiritdingiz!\nDasturni qaytadan ishga tushiring.");
         break;
