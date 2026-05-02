@@ -1,19 +1,13 @@
-﻿Console.WriteLine("Qaysi amal ustida ishlamoqchisiz?");
-Console.WriteLine("- Qo'shish (+)");
-Console.WriteLine("- Ko'paytirish (*)");
-Console.WriteLine("- Ayirish (-)");
-Console.WriteLine("- Bo'lish (/)");
-Console.WriteLine("- Qoldiqni hisoblash (%)");
+﻿Console.WriteLine("Kerakli hisoblash ketma-ketligini kiriting: (a + b =)");
+string calculate = Console.ReadLine();
 
-Console.Write("Kerakli arifmetik operatorni kiriting: ");
-string str = Console.ReadLine();
-char departmentCharacter = Convert.ToChar(str);
+string[] operators = calculate.Trim().Split();
 
-Console.Write("Birinchi sonni kiriting: ");
-int a = Convert.ToInt32(Console.ReadLine());
+char departmentCharacter = Convert.ToChar(operators[1]);
+int a = Convert.ToInt32(operators[0]);
+int b = Convert.ToInt32(operators[2]);
 
-Console.Write("Ikkinchi sonni kiriting: ");
-int b = Convert.ToInt32(Console.ReadLine());
+Console.Clear();
 
 switch (departmentCharacter)
 {
