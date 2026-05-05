@@ -4,6 +4,7 @@ string doQuit = string.Empty;
 
 do
 {
+    Console.Clear();
     Console.WriteLine("1. Sonning darajasini topish");
     Console.WriteLine("2. [1; n] intervalda tub sonlar va ularning yig'indisini hisoblash");
     Console.WriteLine("3. Arifmetik amallarni hisoblash");
@@ -41,10 +42,35 @@ do
             }
         case "2":
             {
+                Console.Clear();
+                Console.Write("[1; n] interval olmoqchi bo'lgan n ni kiriting: ");
+                int n = int.Parse(Console.ReadLine());
+
+                int summa = 0;
+
+                Console.Write($"[1; {n}] intervalidagi tub sonlar: ");
+                for (int i = 1; i <= n; i++)
+                {
+                    int divisorCount = 0;
+                    for (int j = 1; j <= i; j ++)
+                    {
+                        if (i % j == 0)
+                            divisorCount ++;
+                    }
+
+                    if (divisorCount == 2)
+                    {
+                        Console.Write(i + " ");
+                        summa += i;
+                    }
+                }
+
+                Console.WriteLine($"\n[1; {n}] intervalidagi tub sonlar yig'indisi {summa} ga teng.");
                 break;
             }
         case "3":
             {
+                Console.Clear();
                 Console.WriteLine("Kerakli hisoblash ketma-ketligini kiriting: (a + b =)");
                 string calculate = Console.ReadLine();
 
@@ -101,6 +127,4 @@ do
     Console.WriteLine("Dasturdan chiqishni xohlaysizmi?");
     Console.Write("(ha/yo'q): ");
     doQuit = Console.ReadLine();
-
-    Console.Clear();
 } while (doQuit.ToLower() == "yo'q");
