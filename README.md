@@ -5,11 +5,11 @@
 
 ## ⚙️ Xususiyatlari
 *Bu loyiha quyidagi amallarni bajaradi:*
-- *Sonning darajasini topish:*
+- *Sonning darajasini topish:*                  
 ![firstOption](assets/firstOption.gif)
-- *[1; n] intervalda tub sonlar va ularning yig'indisini hisoblash:*
+- *[1; n] intervalda tub sonlar va ularning yig'indisini hisoblash:*  
 ![secondOption](assets/secondOption.gif)
-- *Arifmetik amallarni hisoblash:*
+- *Arifmetik amallarni hisoblash:*              
 ![thirdOption](assets/thirdOption.gif)
 
 ## ⚒️ Ishga tushirish
