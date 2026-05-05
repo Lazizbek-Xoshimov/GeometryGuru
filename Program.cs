@@ -15,6 +15,28 @@ do
     {
         case "1":
             {
+                Console.Clear();
+                Console.Write("Hisoblamoqchi bo'lgan sonni kiriting: ");
+                int number = int.Parse(Console.ReadLine());
+
+                Console.Write("Hisoblamoqchi bo'lgan sonning darajasini kiriting: ");
+                int degree = int.Parse(Console.ReadLine());
+
+                double result = Math.Pow(number, degree);
+
+                if (degree == 2)
+                {
+                    Console.WriteLine($"{number} ning kvadrati {result} ga teng.");
+                    break;
+                }
+
+                if (degree == 3)
+                {
+                    Console.WriteLine($"{number} ning kubi {result} ga teng.");
+                    break;
+                }
+
+                Console.WriteLine($"{number} ning {degree} darajasi {result} ga teng.");
                 break;
             }
         case "2":
