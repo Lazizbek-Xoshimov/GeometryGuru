@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-string doQuit = string.Empty;
+﻿string doQuit = string.Empty;
 
 do
 {
@@ -23,7 +21,11 @@ do
                 Console.Write("Hisoblamoqchi bo'lgan sonning darajasini kiriting: ");
                 int degree = int.Parse(Console.ReadLine());
 
-                double result = Math.Pow(number, degree);
+                double result = 1;
+                for (int i = 0; i < degree; i++)
+                {
+                    result *= number;
+                }
 
                 if (degree == 2)
                 {
