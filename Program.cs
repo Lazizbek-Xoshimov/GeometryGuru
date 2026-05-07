@@ -17,6 +17,7 @@ namespace GeometryGuru
                 Console.WriteLine("4. 3 ta sondan katta sonni hisoblash");
                 Console.WriteLine("5. Factorial hisoblash");
                 Console.WriteLine("6. Sonning tub son ekanligini tekshirish");
+                Console.WriteLine("7. Sonning palindrome son ekanligini tekshirish");
                 Console.Write("Kerakli bo'limni tanlang: ");
 
                 string option = Console.ReadLine();
@@ -88,6 +89,19 @@ namespace GeometryGuru
                                 Console.WriteLine($"{number} - tub son.");
                             else
                                 Console.WriteLine($"{number} tub son emas.");
+                            break;
+                        }
+                    case "7":
+                        {
+                            Console.Clear();
+                            Console.Write("Palindrome ekanligini tekshirmoqchi bo'lgan sonni kiriting: ");
+                            string numberString = Console.ReadLine();
+
+                            if(IsPalindrome(numberString))
+                                Console.WriteLine($"{numberString} palindrome son.");
+                            else
+                                Console.WriteLine($"{numberString} palindrome son emas.");
+
                             break;
                         }
                 }
@@ -260,6 +274,17 @@ namespace GeometryGuru
                 return true;
             else 
                 return false;
+        }
+        // "12321"
+        static bool IsPalindrome(string numberString)
+        {
+            for (int i = 0; i < numberString.Length / 2; i++)
+            {
+                if (numberString[i] != numberString[numberString.Length - 1 - i])
+                    return false;
+            }
+
+            return true;
         }
     }
 }
