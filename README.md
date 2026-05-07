@@ -1,4 +1,6 @@
-<img src="assets/geometry_guru_logo.jpg" width="200" height="200"/>
+<p align="center">
+    <img src="assets/geometry_guru_logo.jpg" width="200" height="200"/>
+</p>
 
 # 🧩 GeometryGuru
 **Loyiha bir nechta arifmetik amallarni va tub sonlar ustida ishlay oladi**
