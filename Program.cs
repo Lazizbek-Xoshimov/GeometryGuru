@@ -14,6 +14,7 @@ namespace GeometryGuru
                 Console.WriteLine("1. Sonning darajasini topish");
                 Console.WriteLine("2. [1; n] intervalda tub sonlar va ularning yig'indisini hisoblash");
                 Console.WriteLine("3. Arifmetik amallarni hisoblash");
+                Console.WriteLine("4. 3 ta sondan katta sonni hisoblash");
                 Console.Write("Kerakli bo'limni tanlang: ");
 
                 string option = Console.ReadLine();
@@ -36,6 +37,31 @@ namespace GeometryGuru
                         {
                             Console.Clear();
                             ArithmeticOperations();
+                            break;
+                        }
+                    case "4":
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Taqqoslashingiz kerak bo'ladigan sonlarni kiriting.");
+                            
+                            Console.Write("Birinchi son: ");
+                            int firstNumber = int.Parse(Console.ReadLine());
+
+                            Console.Write("Ikkinchi son: ");
+                            int secondNumber = int.Parse(Console.ReadLine());
+
+                            Console.Write("Uchinchi son: ");
+                            int thirdNumber = int.Parse(Console.ReadLine());
+
+                            int largerNumber = GetMaxValue(firstNumber, secondNumber, thirdNumber);
+
+                            if (largerNumber == firstNumber)
+                                Console.WriteLine($"Eng kattasi birinchi son - {largerNumber}");
+                            else if (largerNumber == secondNumber)
+                                Console.WriteLine($"Eng kattasi ikkinchi son - {largerNumber}");
+                            else
+                                Console.WriteLine($"Eng kattasi uchinchi son - {largerNumber}");
+
                             break;
                         }
                 }
@@ -163,5 +189,23 @@ namespace GeometryGuru
         static int DivisionTwoNumbers(int a, int b) => a / b;
 
         static int ResidualTwoNumbers(int a, int b) => a % b;
+
+        static int GetMaxValue(int firstNumber, int secondNumber, int thirdNumber)
+        {
+            if (firstNumber < secondNumber)
+            {
+                if (secondNumber < thirdNumber)
+                    return thirdNumber;
+                else
+                    return secondNumber;
+            }
+            else
+            {
+                if (firstNumber < thirdNumber)
+                    return thirdNumber;
+                else
+                    return firstNumber;
+            }
+        }
     }
 }
