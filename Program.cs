@@ -15,6 +15,7 @@ namespace GeometryGuru
                 Console.WriteLine("2. [1; n] intervalda tub sonlar va ularning yig'indisini hisoblash");
                 Console.WriteLine("3. Arifmetik amallarni hisoblash");
                 Console.WriteLine("4. 3 ta sondan katta sonni hisoblash");
+                Console.WriteLine("5. Factorial hisoblash");
                 Console.Write("Kerakli bo'limni tanlang: ");
 
                 string option = Console.ReadLine();
@@ -61,6 +62,18 @@ namespace GeometryGuru
                                 Console.WriteLine($"Eng kattasi ikkinchi son - {largerNumber}");
                             else
                                 Console.WriteLine($"Eng kattasi uchinchi son - {largerNumber}");
+
+                            break;
+                        }
+                    case "5":
+                        {
+                            Console.Clear();
+                            Console.Write("Factorial hisoblanishi kerak bo'lgan sonni kiriting: ");
+                            int number = int.Parse(Console.ReadLine());
+
+                            int factorialOfNumber = Factorial(number);
+
+                            Console.WriteLine($"{number}! = {factorialOfNumber}");
 
                             break;
                         }
@@ -206,6 +219,18 @@ namespace GeometryGuru
                 else
                     return firstNumber;
             }
+        }
+
+        static int Factorial(int number)
+        {
+            int numberOfFactorial = 1;
+
+            for (int i = 2; i <= number; i++)
+            {
+                numberOfFactorial *= i;
+            }
+
+            return numberOfFactorial;
         }
     }
 }
