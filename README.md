@@ -11,9 +11,9 @@
 ![secondOption](assets/secondOption.gif)
 - *Arifmetik amallarni hisoblash:*              
 ![thirdOption](assets/thirdOption.gif)
-- *Uchta sondan kattasini topish*
+- *Uchta sondan kattasini topish*                             
 ![fourthOption](assets/fourthOption.gif)
-- *Factorial hisoblash*
+- *Factorial hisoblash*                                          
 ![fifthOption](assets/fifthOption.gif)
 - *Sonning tub ekanligini tekshirish*
 ![sixthOption](assets/sixthOption.gif)
