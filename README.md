@@ -1,4 +1,4 @@
-![geoLogo](assets/geoLogo.jpg)
+<img src="assets/geometry_guru_logo.jpg" width="200" height="200"/>
 
 # 🧩 GeometryGuru
 **Loyiha bir nechta arifmetik amallarni va tub sonlar ustida ishlay oladi**
