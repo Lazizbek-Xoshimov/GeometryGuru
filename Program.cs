@@ -27,19 +27,46 @@ namespace GeometryGuru
                     case "1":
                         {
                             Console.Clear();
-                            ToPow();
+                            Console.Write("Hisoblamoqchi bo'lgan sonni kiriting: ");
+                            int number = int.Parse(Console.ReadLine());
+
+                            Console.Write("Hisoblamoqchi bo'lgan sonning darajasini kiriting: ");
+                            int degree = int.Parse(Console.ReadLine());
+
+                            double resultToPow = ToPow(number, degree);
+
+                            if (degree == 2)
+                            {
+                                Console.WriteLine($"{number} ning kvadrati {resultToPow} ga teng.");
+                                break;
+                            }
+
+                            if (degree == 3)
+                            {
+                                Console.WriteLine($"{number} ning kubi {resultToPow} ga teng.");
+                                break;
+                            }
+
+                            Console.WriteLine($"{number} ning {degree} darajasi {resultToPow} ga teng.");
                             break;
                         }
                     case "2":
                         {
                             Console.Clear();
-                            SumOfPrimeNumbers();
+                            Console.Write("[1; n] interval olmoqchi bo'lgan n ni kiriting: ");
+                            int n = int.Parse(Console.ReadLine());  
+
+                            SumOfPrimeNumbers(n);
+
                             break;
                         }
                     case "3":
                         {
                             Console.Clear();
-                            ArithmeticOperations();
+                            Console.WriteLine("Kerakli hisoblash ketma-ketligini kiriting: (a + b =)");
+                            string calculate = Console.ReadLine();
+
+                            ArithmeticOperations(calculate);
                             break;
                         }
                     case "4":
@@ -112,14 +139,8 @@ namespace GeometryGuru
             } while (doQuit.ToLower() == "yo'q");
         }
 
-        static void ToPow()
+        static double ToPow(int number, int degree)
         {
-            Console.Write("Hisoblamoqchi bo'lgan sonni kiriting: ");
-            int number = int.Parse(Console.ReadLine());
-
-            Console.Write("Hisoblamoqchi bo'lgan sonning darajasini kiriting: ");
-            int degree = int.Parse(Console.ReadLine());
-
             double result = 1;
 
             for (int i = 0; i < degree; i++)
@@ -127,24 +148,11 @@ namespace GeometryGuru
                 result *= number;
             }
 
-            if (degree == 2)
-            {
-                Console.WriteLine($"{number} ning kvadrati {result} ga teng.");
-            }
-
-            if (degree == 3)
-            {
-                Console.WriteLine($"{number} ning kubi {result} ga teng.");
-            }
-
-            Console.WriteLine($"{number} ning {degree} darajasi {result} ga teng.");
+            return result;
         }
 
-        static void SumOfPrimeNumbers()
+        static void SumOfPrimeNumbers(int n)
         {
-            Console.Write("[1; n] interval olmoqchi bo'lgan n ni kiriting: ");
-            int n = int.Parse(Console.ReadLine());
-
             int summa = 0;
 
             Console.Write($"[1; {n}] intervalidagi tub sonlar: ");
@@ -167,11 +175,8 @@ namespace GeometryGuru
             Console.WriteLine($"\n[1; {n}] intervalidagi tub sonlar yig'indisi {summa} ga teng.");
         }
 
-        static void ArithmeticOperations()
+        static void ArithmeticOperations(string calculate)
         {
-            Console.WriteLine("Kerakli hisoblash ketma-ketligini kiriting: (a + b =)");
-            string calculate = Console.ReadLine();
-
             string[] operators = calculate.Trim().Split();
 
             char departmentCharacter = Convert.ToChar(operators[1]);
@@ -275,7 +280,7 @@ namespace GeometryGuru
             else 
                 return false;
         }
-        // "12321"
+        
         static bool IsPalindrome(string numberString)
         {
             for (int i = 0; i < numberString.Length / 2; i++)
