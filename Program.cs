@@ -16,6 +16,7 @@ namespace GeometryGuru
                 Console.WriteLine("3. Arifmetik amallarni hisoblash");
                 Console.WriteLine("4. 3 ta sondan katta sonni hisoblash");
                 Console.WriteLine("5. Factorial hisoblash");
+                Console.WriteLine("6. Sonning tub son ekanligini tekshirish");
                 Console.Write("Kerakli bo'limni tanlang: ");
 
                 string option = Console.ReadLine();
@@ -75,6 +76,18 @@ namespace GeometryGuru
 
                             Console.WriteLine($"{number}! = {factorialOfNumber}");
 
+                            break;
+                        }
+                    case "6":
+                        {
+                            Console.Clear();
+                            Console.Write("Tub son ekanligini tekshirmoqchi bo'lgan sonni kiriting: ");
+                            int number = int.Parse(Console.ReadLine());
+
+                            if (IsPrime(number))
+                                Console.WriteLine($"{number} - tub son.");
+                            else
+                                Console.WriteLine($"{number} tub son emas.");
                             break;
                         }
                 }
@@ -231,6 +244,22 @@ namespace GeometryGuru
             }
 
             return numberOfFactorial;
+        }
+
+        static bool IsPrime(int number)
+        {
+            int countOfDivisors = 0;
+
+            for (int i = 2; i <= number; i++)
+            {
+                if (number % i == 0)
+                    countOfDivisors ++;
+            }
+
+            if (countOfDivisors == 1)
+                return true;
+            else 
+                return false;
         }
     }
 }
